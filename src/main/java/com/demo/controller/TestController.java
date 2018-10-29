@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -37,8 +38,8 @@ public class TestController {
         return userDao.getUserByUsername(username);
     }
 
-    @RequestMapping(value = "/showHello" , method = RequestMethod.OPTIONS)
-    @ApiOperation(value = "页面跳转", notes = "跳转到hello页面")
+    @RequestMapping(value = "/showHello" )
+    @ApiIgnore
     public ModelAndView showHello() {
         User user = userDao.getUserByUsername("test");
         return new ModelAndView("hello");

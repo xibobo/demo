@@ -73,7 +73,7 @@ public class DruidConfig {
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
         reg.addInitParameter("loginUsername", username);
-        reg.addInitParameter("loginPassword", "root");
+        reg.addInitParameter("loginPassword", password);
         reg.addInitParameter("logSlowSql", logSlowSql);
         return reg;
     }
